@@ -15,7 +15,10 @@ export const ThemeSwitch = () => {
     }
 
     return (
-        <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+        <button
+            className='border border-purple-500 rounded-2xl p-1 hover:bg-purple-500 hover:bg-opacity-10 dark:hover:bg-opacity-50'
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        >
             {theme === "dark" ? "☀️" : "🌙"}
         </button>
     );
