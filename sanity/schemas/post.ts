@@ -57,5 +57,11 @@ export const post = {
                 },
             ],
         },
+        {
+            name: "tags",
+            title: "Tags",
+            type: "array",
+            of: [{ type: "reference", to: [{ type: "tag" }] }],
+        },
     ],
 };
