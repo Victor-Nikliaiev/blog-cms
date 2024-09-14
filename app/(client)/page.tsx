@@ -10,6 +10,8 @@ async function getPosts() {
   slug,
   publishedAt,
   excerpt,
+  _id,
+  body,
   tags[]-> {
     _id,
     slug,
@@ -27,9 +29,6 @@ export const revalidate = 60;
 export default async function Home() {
     const posts: PostInterface[] = await getPosts();
     const hasPosts = posts?.length > 0;
-    // const postsArray = hasPosts
-    //     ? posts.map(post => <PostComponent key={post._id} post={post} />)
-    //     : null;
 
     console.log(posts);
     return (

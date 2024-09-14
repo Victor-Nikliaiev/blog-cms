@@ -43,3 +43,22 @@ export const tagStyle = `
      border
      dark:border-gray-800
     `;
+
+export const postPageStyle = {
+    postDateStyle: `${vT323Font.className} text-purple-500`,
+    postTagStyle: tagStyle,
+};
+
+export const richTextStyle = `
+    mt-14
+    text-justify
+    max-w-2xl
+    m-auto
+    prose-headings:my-5
+    prose-headings:text-2xl
+    prose-p:mb-5
+    prose-p:leading-7
+    prose-li:list-disc
+    prose-li:leading-7
+    prose-li:ml-4
+`;

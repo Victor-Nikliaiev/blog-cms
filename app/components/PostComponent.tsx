@@ -15,7 +15,7 @@ interface postProps {
 export const PostComponent = ({ post }: postProps) => {
     return (
         <div className={cardContainerStyleSheet}>
-            <Link href={`/post/${post?.slug?.current}`}>
+            <Link href={`/posts/${post?.slug?.current}`}>
                 <h2 className={titleStyle}>{post?.title}</h2>
                 <p className={dateStyle}>
                     {new Date(post?.publishedAt).toDateString()}
