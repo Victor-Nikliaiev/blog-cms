@@ -1,3 +1,5 @@
+import { Rule } from "sanity";
+
 export const post = {
     name: "post",
     title: "Post",
@@ -8,6 +10,8 @@ export const post = {
             name: "title",
             title: "Title",
             type: "string",
+            validation: (Rule: Rule) =>
+                Rule.required().error("This field is required"),
         },
         {
             name: "slug",
@@ -17,16 +21,21 @@ export const post = {
                 source: "title",
                 maxLength: 96,
             },
+            validation: (Rule: Rule) =>
+                Rule.required().error("This field is required"),
         },
         {
             name: "publishedAt",
             title: "Published at",
             type: "datetime",
+            initialValue: () => new Date().toISOString(),
         },
         {
             name: "excerpt",
             title: "Excerpt",
             type: "text",
+            validation: (Rule: Rule) =>
+                Rule.max(200).error("Excerpt must be less than 200 characters"),
         },
         {
             name: "body",
